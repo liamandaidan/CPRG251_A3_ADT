@@ -251,4 +251,18 @@ class LinkedListTests {
 		String value = (String) this.linkedList.retrieve(1);
 		assertEquals("b", value);
 	}
+	/**
+	 * @author Ben
+	 */
+	@Test
+	void testIndexOf(){
+
+	}
+	/**
+	 * @author Ben
+	 */
+	@Test
+	void testContains(){
+
+	}
 }
