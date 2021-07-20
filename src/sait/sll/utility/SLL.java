@@ -199,6 +199,14 @@ public class SLL implements LinkedListADT {
 		this.tail = tail;
 	}
 
+	/**
+	 * This function will return the size of the SLL 
+	 * @return the size of the linked list
+	 */
+	public int getSize() {
+		return this.size;
+
+	}
 
 	/**
 	 * @param size the size to set
