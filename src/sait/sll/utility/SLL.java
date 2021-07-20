@@ -108,10 +108,13 @@ public class SLL implements LinkedListADT {
 		current.setElement(data);
 	}
 
+	/**
+	 * This function will return the size of the SLL 
+	 * @return the size of the linked list
+	 */
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.size;
 	}
 
 	/**
