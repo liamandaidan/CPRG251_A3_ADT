@@ -11,7 +11,8 @@ public class SLL implements LinkedListADT {
 	 */
 	public SLL() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.head = null;
+		this.size = 0;
 	}
 
 	/**
