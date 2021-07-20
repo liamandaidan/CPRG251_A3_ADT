@@ -94,7 +94,7 @@ public class SLL implements LinkedListADT {
 
 		Node node = head;
 		if (index >= size) {
-			throw new IndexOutOfBoundsException("out of bounds!");
+			throw new IndexOutOfBoundsException("The index at: "+index+", is out of bounds!");
 		} else if (index == 0) {//head
 			head = node.getNext();
 			size--;
