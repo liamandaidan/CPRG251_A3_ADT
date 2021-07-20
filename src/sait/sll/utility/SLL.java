@@ -1,12 +1,10 @@
 package sait.sll.utility;
 
 public class SLL implements LinkedListADT {
-	
+
 	private Node head;
 	private Node tail;
 	private int size;
-	
-	
 
 	/**
 	 * 
@@ -37,13 +35,13 @@ public class SLL implements LinkedListADT {
 	@Override
 	public void clear() {
 		this.head = null;
-		
+
 	}
 
 	@Override
 	public void append(Object data) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -52,19 +50,31 @@ public class SLL implements LinkedListADT {
 		newNode.setNext(this.head);
 		head = newNode;
 		size++;
-		
+
 	}
 
 	@Override
 	public void insert(Object data, int index) throws IndexOutOfBoundsException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void replace(Object data, int index) throws IndexOutOfBoundsException {
-		// TODO Auto-generated method stub
-		
+		// Check for valid size first
+		if (index > this.size() || index < 0) {
+			throw new IndexOutOfBoundsException();
+		}
+
+		// traverse through list
+		Node current = head;
+		int currentIndexPosistion = 0;
+
+		while (!(current == null) && currentIndexPosistion < index) {
+			currentIndexPosistion++;
+			current = current.getNext();
+		}
+		current.setElement(data);
 	}
 
 	@Override
@@ -76,13 +86,24 @@ public class SLL implements LinkedListADT {
 	@Override
 	public void delete(int index) throws IndexOutOfBoundsException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public Object retrieve(int index) throws IndexOutOfBoundsException {
-		// TODO Auto-generated method stub
-		return null;
+		// Check for valid size
+		if (index < 0 || index > this.size()) {
+			throw new IndexOutOfBoundsException();
+		}
+		// set the posistion of the current node to the head
+		Node current = head;
+		
+		// move through the list
+		for (int i = 0; i < this.size() && current != null; i++) {
+			current = current.getNext(); // set the node to the next node 
+		}
+		// return the element in the node
+		return current.getElement();
 	}
 
 	@Override
@@ -138,6 +159,5 @@ public class SLL implements LinkedListADT {
 	public void setSize(int size) {
 		this.size = size;
 	}
-	
 
 }
