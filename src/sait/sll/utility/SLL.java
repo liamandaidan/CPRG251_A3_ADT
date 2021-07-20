@@ -1,19 +1,17 @@
 package sait.sll.utility;
 
 public class SLL implements LinkedListADT {
-	
+
 	private Node head;
 	private Node tail;
 	private int size;
-	
-	
 
 	/**
 	 * 
 	 */
 	public SLL() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.size = 0;
 	}
 
 	/**
@@ -37,13 +35,13 @@ public class SLL implements LinkedListADT {
 	@Override
 	public void clear() {
 		this.head = null;
-		
+
 	}
 
 	@Override
 	public void append(Object data) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -52,19 +50,19 @@ public class SLL implements LinkedListADT {
 		newNode.setNext(this.head);
 		head = newNode;
 		size++;
-		
+
 	}
 
 	@Override
 	public void insert(Object data, int index) throws IndexOutOfBoundsException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void replace(Object data, int index) throws IndexOutOfBoundsException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -75,7 +73,14 @@ public class SLL implements LinkedListADT {
 
 	@Override
 	public void delete(int index) throws IndexOutOfBoundsException {
-		// TODO Auto-generated method stub
+
+		if (index > size) {
+			throw new IndexOutOfBoundsException(
+					"The size specified at " + index + ". Is to large for the linked list.");
+		}
+		Node pre = head;
+		pre.setNext(pre);
+		
 		
 	}
 
@@ -129,7 +134,8 @@ public class SLL implements LinkedListADT {
 	 * @return the size
 	 */
 	public int getSize() {
-		return size;
+		return this.size;
+
 	}
 
 	/**
@@ -138,6 +144,5 @@ public class SLL implements LinkedListADT {
 	public void setSize(int size) {
 		this.size = size;
 	}
-	
 
 }
