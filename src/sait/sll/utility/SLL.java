@@ -102,7 +102,7 @@ public class SLL implements LinkedListADT {
 			index++;
 			current = current.getNext();
 		}
-		return index;
+		return -1;
 	}
 	/**
 	 * @author Ben
