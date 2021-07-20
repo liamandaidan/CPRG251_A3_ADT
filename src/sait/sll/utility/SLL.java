@@ -48,7 +48,10 @@ public class SLL implements LinkedListADT {
 
 	@Override
 	public void prepend(Object data) {
-		// TODO Auto-generated method stub
+		Node newNode = new Node(data);
+		newNode.setNext(this.head);
+		head = newNode;
+		size++;
 		
 	}
 
