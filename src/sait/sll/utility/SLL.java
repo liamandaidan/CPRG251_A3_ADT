@@ -84,10 +84,28 @@ public class SLL implements LinkedListADT {
 		return 0;
 	}
 
+	/**
+	 * This function will delete a node at the specified index.
+	 * @throws IndexOutOfBoundsException
+	 * @param index the index to remove the node at
+	 */
 	@Override
 	public void delete(int index) throws IndexOutOfBoundsException {
-		// TODO Auto-generated method stub
 
+		Node node = head;
+		if (index >= size) {
+			throw new IndexOutOfBoundsException("out of bounds!");
+		} else if (index == 0) {//head
+			head = node.getNext();
+			size--;
+		}else {//between to tail
+
+			for (int i = 0; i < index-1; i++) {
+				node = node.getNext();
+			}
+			node.setNext(node.getNext().getNext());
+			size--;
+		}
 	}
 
 	@Override
@@ -148,10 +166,12 @@ public class SLL implements LinkedListADT {
 	}
 
 	/**
-	 * @return the size
+	 * This function will return the size of the SLL 
+	 * @return the size of the linked list
 	 */
 	public int getSize() {
-		return size;
+		return this.size;
+
 	}
 
 	/**
