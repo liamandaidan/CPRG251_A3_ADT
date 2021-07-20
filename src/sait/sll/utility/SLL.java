@@ -53,7 +53,10 @@ public class SLL implements LinkedListADT {
 			while (currentNode.getNext() != null) {
 				currentNode = currentNode.getNext();
 			}
+			currentNode.setNext(newNode);
+		//	System.out.println("This is the new node: "+ newNode.getElement());
 		}
+		this.size++;
 
 	}
 
@@ -73,7 +76,7 @@ public class SLL implements LinkedListADT {
 			throw new IndexOutOfBoundsException();
 		}
 
-		Node newNode = new Node();
+		Node newNode = new Node(data);
 		if (index == 0) {
 			newNode.setNext(head);
 			head = newNode;
@@ -160,16 +163,18 @@ public class SLL implements LinkedListADT {
 		if (index == 0) {// head
 			return head.getElement();
 		}
-
-		// Step 1 loop through indexs until we reach the index we are looking for
-		// Step 2 return at index
+		
 		for (int i = 0; i < this.size(); i++) {
-			System.out.println("The current element is: " + current.getElement());
+			if(i == index) {
+				//System.out.println("the index and iterator match");
+				return current.getElement();
+			}
+			
 			current = current.getNext(); // set the node to the next node
 		}
 
 		// return the element in the node
-		return current.getElement();
+		return null;
 	}
 
 	/**
@@ -179,9 +184,9 @@ public class SLL implements LinkedListADT {
 	public int indexOf(Object data) {
 
 		int index = 0;
-		Node current = head.getNext();
+		Node current = head;
 		while (current != null) {
-			if (current.equals(data)) {
+			if (current.getElement().equals(data)) {
 				return index;
 			}
 			index++;
@@ -195,15 +200,25 @@ public class SLL implements LinkedListADT {
 	 */
 	@Override
 	public boolean contains(Object data) {
-		int index = 0;
-		Node current = head.getNext();
-		while (current != null) {
-			if (current.equals(data)) {
-				return true;
-			}
-			index++;
-			current = current.getNext();
+		// int index = 0;
+		
+		Node current = head;
+		
+		if (head == null) {
+			return false;
 		}
+
+		//System.out.println("(contains method)This is the current " + current.getElement());
+		//System.out.println();
+		while (current != null) {
+			if (current.getElement().equals(data)) {
+				System.out.println("Made it here! "+ current.getElement());
+				return true;
+			} else {
+				current = current.getNext();
+			}
+		}
+
 		return false;
 	}
 
