@@ -63,7 +63,7 @@ public class SLL implements LinkedListADT {
 	@Override
 	public void replace(Object data, int index) throws IndexOutOfBoundsException {
 		// Check for valid size first
-		if (index > this.size() || index < 0) {
+		if (index > this.getSize() || index < 0) {
 			throw new IndexOutOfBoundsException();
 		}
 
@@ -96,11 +96,11 @@ public class SLL implements LinkedListADT {
 		if (index < 0 || index > this.size()) {
 			throw new IndexOutOfBoundsException();
 		}
-		// set the posistion of the current node to the head
+		// set the position of the current node to the head
 		Node current = head;
 		
 		// move through the list
-		for (int i = 0; i < this.size() && current != null; i++) {
+		for (int i = 0; i < this.getSize() && current != null; i++) {
 			current = current.getNext(); // set the node to the next node 
 		}
 		// return the element in the node
