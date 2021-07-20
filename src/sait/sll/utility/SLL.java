@@ -85,15 +85,30 @@ public class SLL implements LinkedListADT {
 		return null;
 	}
 
+	/**
+	 * @author Ben
+	 */
 	@Override
 	public int indexOf(Object data) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int index = 0;
+		Node current = head.getNext();
+		while(current != null)
+		{
+			if(current.equals(data))
+			{
+				return index;
+			}
+			index++;
+			current = current.getNext();
+		}
+		return index;
 	}
-
+	/**
+	 * @author Ben
+	 */
 	@Override
 	public boolean contains(Object data) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
