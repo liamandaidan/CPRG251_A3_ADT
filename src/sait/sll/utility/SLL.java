@@ -109,6 +109,17 @@ public class SLL implements LinkedListADT {
 	 */
 	@Override
 	public boolean contains(Object data) {
+		int index = 0;
+		Node current = head.getNext();
+		while(current != null)
+		{
+			if(current.equals(data))
+			{
+				return true;
+			}
+			index++;
+			current = current.getNext();
+		}
 		return false;
 	}
 
