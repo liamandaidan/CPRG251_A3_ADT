@@ -36,7 +36,7 @@ public class SLL implements LinkedListADT {
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+		this.head = null;
 		
 	}
 
