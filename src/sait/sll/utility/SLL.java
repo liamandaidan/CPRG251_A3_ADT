@@ -29,8 +29,11 @@ public class SLL implements LinkedListADT {
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		if (head == null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	@Override
@@ -65,11 +68,11 @@ public class SLL implements LinkedListADT {
 
 	@Override
 	public void insert(Object data, int index) throws IndexOutOfBoundsException {
-		
-		if ( index >= size() || index < 0) {
+
+		if (index >= size() || index < 0) {
 			throw new IndexOutOfBoundsException();
 		}
-		
+
 		Node newNode = new Node();
 		if (index == 0) {
 			newNode.setNext(head);
@@ -109,7 +112,8 @@ public class SLL implements LinkedListADT {
 	}
 
 	/**
-	 * This function will return the size of the SLL 
+	 * This function will return the size of the SLL
+	 * 
 	 * @return the size of the linked list
 	 */
 	@Override
@@ -119,6 +123,7 @@ public class SLL implements LinkedListADT {
 
 	/**
 	 * This function will delete a node at the specified index.
+	 * 
 	 * @throws IndexOutOfBoundsException
 	 * @param index the index to remove the node at
 	 */
@@ -127,13 +132,13 @@ public class SLL implements LinkedListADT {
 
 		Node node = head;
 		if (index >= size) {
-			throw new IndexOutOfBoundsException("The index at: "+index+", is out of bounds!");
-		} else if (index == 0) {//head
+			throw new IndexOutOfBoundsException("The index at: " + index + ", is out of bounds!");
+		} else if (index == 0) {// head
 			head = node.getNext();
 			size--;
-		}else {//between to tail
+		} else {// between to tail
 
-			for (int i = 0; i < index-1; i++) {
+			for (int i = 0; i < index - 1; i++) {
 				node = node.getNext();
 			}
 			node.setNext(node.getNext().getNext());
@@ -144,17 +149,25 @@ public class SLL implements LinkedListADT {
 	@Override
 	public Object retrieve(int index) throws IndexOutOfBoundsException {
 		// Check for valid size
-		if (index < 0 || index > this.size()) {
+		if (index < 0 || index >= this.size()) {
 			throw new IndexOutOfBoundsException();
 		}
+
 		// set the position of the current node to the head
 		Node current = head;
 
 		// move through the list
-
-		for (int i = 0; i < this.size() && current != null; i++) {
-			current = current.getNext(); // set the node to the next node 
+		if (index == 0) {// head
+			return head.getElement();
 		}
+
+		// Step 1 loop through indexs until we reach the index we are looking for
+		// Step 2 return at index
+		for (int i = 0; i < this.size(); i++) {
+			System.out.println("The current element is: " + current.getElement());
+			current = current.getNext(); // set the node to the next node
+		}
+
 		// return the element in the node
 		return current.getElement();
 	}
@@ -164,13 +177,11 @@ public class SLL implements LinkedListADT {
 	 */
 	@Override
 	public int indexOf(Object data) {
-		
+
 		int index = 0;
 		Node current = head.getNext();
-		while(current != null)
-		{
-			if(current.equals(data))
-			{
+		while (current != null) {
+			if (current.equals(data)) {
 				return index;
 			}
 			index++;
@@ -178,6 +189,7 @@ public class SLL implements LinkedListADT {
 		}
 		return -1;
 	}
+
 	/**
 	 * @author Ben
 	 */
@@ -185,10 +197,8 @@ public class SLL implements LinkedListADT {
 	public boolean contains(Object data) {
 		int index = 0;
 		Node current = head.getNext();
-		while(current != null)
-		{
-			if(current.equals(data))
-			{
+		while (current != null) {
+			if (current.equals(data)) {
 				return true;
 			}
 			index++;
@@ -224,7 +234,6 @@ public class SLL implements LinkedListADT {
 	public void setTail(Node tail) {
 		this.tail = tail;
 	}
-
 
 	/**
 	 * @param size the size to set
