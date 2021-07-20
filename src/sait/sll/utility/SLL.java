@@ -41,7 +41,16 @@ public class SLL implements LinkedListADT {
 
 	@Override
 	public void append(Object data) {
-		// TODO Auto-generated method stub
+
+		Node newNode = new Node(data);
+		if (head == null) {
+			head = newNode;
+		} else {
+			Node currentNode = head;
+			while (currentNode.getNext() != null) {
+				currentNode = currentNode.getNext();
+			}
+		}
 
 	}
 
@@ -56,7 +65,28 @@ public class SLL implements LinkedListADT {
 
 	@Override
 	public void insert(Object data, int index) throws IndexOutOfBoundsException {
-		// TODO Auto-generated method stub
+		
+		if ( index >= size() || index < 0) {
+			throw new IndexOutOfBoundsException();
+		}
+		
+		Node newNode = new Node();
+		if (index == 0) {
+			newNode.setNext(head);
+			head = newNode;
+		} else {
+			Node currentNode = head;
+			int currentIndex = 0; // current index
+			while (currentNode != null && currentIndex < index - 1) {
+				currentNode = currentNode.getNext();
+				currentIndex++;
+			}
+			Node previousNode = currentNode; // set the previous node come before the node at the current index
+			Node nextNode = currentNode.getNext(); // set the next node to go after the one we are adding
+			previousNode.setNext(newNode);
+			newNode.setNext(nextNode);
+		}
+		size++;
 
 	}
 
@@ -116,8 +146,9 @@ public class SLL implements LinkedListADT {
 		}
 		// set the position of the current node to the head
 		Node current = head;
-		
+
 		// move through the list
+
 		for (int i = 0; i < this.getSize() && current != null; i++) {
 			current = current.getNext(); // set the node to the next node 
 		}
