@@ -74,14 +74,20 @@ public class SLL implements LinkedListADT {
 	@Override
 	public void delete(int index) throws IndexOutOfBoundsException {
 
-		if (index > size) {
-			throw new IndexOutOfBoundsException(
-					"The size specified at " + index + ". Is to large for the linked list.");
+		Node node = head;
+		if (index >= size) {
+			throw new IndexOutOfBoundsException("out of bounds!");
+		} else if (index == 0) {//head
+			head = node.getNext();
+			size--;
+		}else {//between to tail
+
+			for (int i = 0; i < index-1; i++) {
+				node = node.getNext();
+			}
+			node.setNext(node.getNext().getNext());
+			size--;
 		}
-		Node pre = head;
-		pre.setNext(pre);
-		
-		
 	}
 
 	@Override
