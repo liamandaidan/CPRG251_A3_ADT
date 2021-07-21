@@ -241,7 +241,7 @@ class LinkedListTests {
 		 * 
 		 * a -> b -> c -> d
 		 */
-		
+//		System.out.println("(testFindNode) This is the list: "+ linkedList.toString());
 		boolean contains = this.linkedList.contains("b");
 		assertTrue(contains);
 		
