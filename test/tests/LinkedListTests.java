@@ -256,13 +256,28 @@ class LinkedListTests {
 	 */
 	@Test
 	void testIndexOf(){
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		this.linkedList.append("c");
+		this.linkedList.append("d");
 
+		Object valToSearch = "c";
+		int expectedIndex = 2;
+
+		assertEquals(expectedIndex, this.linkedList.indexOf(valToSearch));
 	}
 	/**
 	 * @author Ben
 	 */
 	@Test
 	void testContains(){
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		this.linkedList.append("c");
+		this.linkedList.append("d");
 
+		Object valToSearch = "c";
+		
+		assertTrue(this.linkedList.contains(valToSearch));
 	}
 }
