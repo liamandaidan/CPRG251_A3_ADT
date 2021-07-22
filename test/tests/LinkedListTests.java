@@ -280,4 +280,40 @@ class LinkedListTests {
 		
 		assertTrue(this.linkedList.contains(valToSearch));
 	}
+	
+	
+	/*
+	 * This method will test the removal and the correct index position afterward
+	 *@author Liam McLaughlin 
+	 */
+	@Test
+	public void testIndexRemove() {
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		this.linkedList.append("c");
+		this.linkedList.append("d");
+		int expected = 2;
+		assertEquals(expected, this.linkedList.indexOf("c")); 
+		this.linkedList.delete(2);
+		assertEquals(expected, this.linkedList.indexOf("d"));
+		
+		
+	}
+	/*
+	 * This method will test removal of an index outside of bounds.
+	 * @author Liam McLaughlin
+	 */
+	@Test
+	public void testOutOfBoundsRemoval() {
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		try {
+		this.linkedList.delete(3);
+		}catch(IndexOutOfBoundsException e){
+			System.out.println(e.getMessage());
+			assertTrue(true);
+		}
+	}
+	
+	
 }
