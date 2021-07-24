@@ -2,6 +2,14 @@ package sait.sll.utility;
 
 import java.io.*;
 
+/**
+ * @author Mike
+ * @author Ben
+ * @author Liam
+ * @author Robyn
+ * 
+ * This class is the implementation of LinkedListADT. Is also serializable. 
+ */
 
 public class SLL implements LinkedListADT, Serializable {
 
@@ -12,7 +20,7 @@ public class SLL implements LinkedListADT, Serializable {
 	
 
 	/**
-	 * 
+	 * Constructor, no parameters, creates an empty linked list
 	 */
 	public SLL() {
 		super();
@@ -32,6 +40,9 @@ public class SLL implements LinkedListADT, Serializable {
 		this.size = size;
 	}
 
+	/**
+	 * @return true/false if list is empty
+	 */
 	@Override
 	public boolean isEmpty() {
 		if (head == null) {
@@ -47,6 +58,10 @@ public class SLL implements LinkedListADT, Serializable {
 
 	}
 
+	/**
+	 * @param Object the object to be appended to the list
+	 * @throws IOException if the FileOutputStream can't find the file specified
+	 */
 	@Override
 	public void append(Object data) throws IOException {
 
@@ -81,6 +96,9 @@ public class SLL implements LinkedListADT, Serializable {
 
 	}
 
+	/**
+	 * @param Object the object to be added to the start of the list
+	 */
 	@Override
 	public void prepend(Object data) {
 		Node newNode = new Node(data);
@@ -90,6 +108,11 @@ public class SLL implements LinkedListADT, Serializable {
 
 	}
 
+	/**
+	 * @param Object the object to be appended to the list
+	 * @param index the position in the list for the object to be added
+	 * @throws IndexOutOfBoundsException if the index falls outside the bounds of the list size
+	 */
 	@Override
 	public void insert(Object data, int index) throws IndexOutOfBoundsException {
 
@@ -117,6 +140,11 @@ public class SLL implements LinkedListADT, Serializable {
 
 	}
 
+	/**
+	 * @param Object the new object
+	 * @param index the position of the existing object to be replaced
+	 * @throws IndexOutOfBoundsException if the index falls outside the bounds of the list size
+	 */
 	@Override
 	public void replace(Object data, int index) throws IndexOutOfBoundsException {
 		// Check for valid size first
@@ -137,7 +165,6 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * This function will return the size of the SLL
-	 * 
 	 * @return the size of the linked list
 	 */
 	@Override
@@ -147,7 +174,6 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * This function will delete a node at the specified index.
-	 * 
 	 * @throws IndexOutOfBoundsException
 	 * @param index the index to remove the node at
 	 */
@@ -170,6 +196,12 @@ public class SLL implements LinkedListADT, Serializable {
 		}
 	}
 
+	/**
+	 * This function will retrieve a node at the specified index.
+	 * @throws IndexOutOfBoundsException
+	 * @param index the index to remove the node at
+	 * @return whatever is at the specified index
+	 */
 	@Override
 	public Object retrieve(int index) throws IndexOutOfBoundsException {
 
@@ -202,6 +234,8 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * @author Ben
+	 * @param the data of the object to be located
+	 * @return the index of the found object, or -1 if the object isn't found
 	 */
 	@Override
 	public int indexOf(Object data) {
@@ -220,6 +254,8 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * @author Ben
+	 * @param the data of the object to be located
+	 * @return true/false if the object is located in the list
 	 */
 	@Override
 	public boolean contains(Object data) {

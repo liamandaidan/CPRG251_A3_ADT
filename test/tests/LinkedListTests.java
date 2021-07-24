@@ -261,6 +261,7 @@ class LinkedListTests {
 	/**
 	 * @author Ben
 	 * @throws IOException 
+	 * tests finding the index of an element by its contents
 	 */
 	@Test
 	void testIndexOf() throws IOException{
@@ -277,6 +278,7 @@ class LinkedListTests {
 	/**
 	 * @author Ben
 	 * @throws IOException 
+	 * tests contains method
 	 */
 	@Test
 	void testContains() throws IOException{

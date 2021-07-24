@@ -8,7 +8,7 @@ public class Node implements Serializable {
 	private Node successor;
 	
 	/**
-	 * 
+	 * no args constructor
 	 */
 	public Node() {
 		
