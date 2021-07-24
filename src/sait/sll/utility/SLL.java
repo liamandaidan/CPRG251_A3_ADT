@@ -60,7 +60,6 @@ public class SLL implements LinkedListADT, Serializable {
 				currentNode = currentNode.getNext();	
 			}
 			
-			currentNode.setNext(newNode);
 
 			FileOutputStream fos = new FileOutputStream("res/test.dat");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -73,6 +72,8 @@ public class SLL implements LinkedListADT, Serializable {
 
 			oos.close();
 			fos.close();
+			
+			currentNode.setNext(newNode);
 
 		}
 		this.size++;	
@@ -171,6 +172,8 @@ public class SLL implements LinkedListADT, Serializable {
 
 	@Override
 	public Object retrieve(int index) throws IndexOutOfBoundsException {
+
+
 		// Check for valid size
 		if (index < 0 || index >= this.size()) {
 			throw new IndexOutOfBoundsException();

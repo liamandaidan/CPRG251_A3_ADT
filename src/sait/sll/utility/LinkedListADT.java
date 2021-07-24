@@ -72,6 +72,8 @@ public interface LinkedListADT
 	 * @param index Index of element to get.
 	 * @return Data in element or null if it was not found.
 	 * @exception IndexOutOfBoundsException Thrown if index is negative or larger than size - 1 of the list.
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
 	 */
 	Object retrieve(int index) throws IndexOutOfBoundsException;
 

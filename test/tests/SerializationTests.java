@@ -49,7 +49,7 @@ class SerializationTests {
 	}
 
 	@Test
-	public void testDataValues() {
+	public void testDataValues() throws IndexOutOfBoundsException {
 		assertFalse(this.users.isEmpty());
 
 		// Test the size is 4
@@ -95,7 +95,10 @@ class SerializationTests {
 		User expectedUser1 = new User(1, "Joe Blow", "jblow@gmail.com", null);
 		User actualUser1 = (User) users.retrieve(0);
 
-		assertEquals(expectedUser1, actualUser1);
+		assertEquals(expectedUser1, actualUser1); 
+		
+		System.out.println(expectedUser1);
+		System.out.println(actualUser1);
 		assertTrue(actualUser1.isCorrectPassword(null));
 
 		User expectedUser2 = new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", null);
