@@ -324,5 +324,30 @@ class LinkedListTests {
 		}
 	}
 	
+	/**
+	 * This will test to make sure the retrieve Method is return he correct value
+	 */
+	@Test
+	public void testRetrieve() throws IOException{
+		
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		this.linkedList.append("c");
+		this.linkedList.append("d");
+		
+		/**
+		 * Linked list should now be:
+		 * 
+		 * a -> b -> c -> d
+		 */
+		String expected ="a";
+		assertEquals(expected,this.linkedList.retrieve(0));
+		assertNotEquals(expected, this.linkedList.retrieve(1));
+		
+		assertThrows(IndexOutOfBoundsException.class, () -> this.linkedList.retrieve(4), "Out of bounds");
+		assertThrows(IndexOutOfBoundsException.class, () -> this.linkedList.retrieve(-1), "Out of bounds");
+		
+	}
+	
 	
 }
