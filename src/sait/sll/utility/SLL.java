@@ -1,12 +1,15 @@
 package sait.sll.utility;
 
-import java.io.Serializable;
+import java.io.*;
+
 
 public class SLL implements LinkedListADT, Serializable {
 
 	private Node head;
 	private Node tail;
 	private int size;
+	
+	
 
 	/**
 	 * 
@@ -45,20 +48,35 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	@Override
-	public void append(Object data) {
+	public void append(Object data) throws IOException {
 
 		Node newNode = new Node(data);
 		if (head == null) {
 			head = newNode;
 		} else {
 			Node currentNode = head;
+			
 			while (currentNode.getNext() != null) {
-				currentNode = currentNode.getNext();
+				currentNode = currentNode.getNext();	
 			}
+			
 			currentNode.setNext(newNode);
-		//	System.out.println("This is the new node: "+ newNode.getElement());
+
+			FileOutputStream fos = new FileOutputStream("res/test.dat");
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			System.out.println("file created");
+			
+			oos.writeObject(currentNode.getElement()); 
+			System.out.println("list item written");
+			
+			oos.reset();
+
+			oos.close();
+			fos.close();
+
 		}
-		this.size++;
+		this.size++;	
+	
 
 	}
 

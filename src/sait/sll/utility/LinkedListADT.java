@@ -1,5 +1,8 @@
 package sait.sll.utility;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 /**
  * Abstract data type for a linked list.
  * 
@@ -24,8 +27,10 @@ public interface LinkedListADT
 	/**
 	 * Adds to the end of the list.
 	 * @param data Data to append.
+	 * @throws FileNotFoundException 
+	 * @throws IOException 
 	 */
-	void append(Object data);
+	void append(Object data) throws IOException;
 
 	/**
 	 * Prepends (adds to beginning) data to the list.

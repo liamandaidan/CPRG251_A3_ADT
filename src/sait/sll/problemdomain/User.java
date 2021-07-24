@@ -1,12 +1,14 @@
 package sait.sll.problemdomain;
 
+import java.io.Serializable;
+
 /**
  * Represents a user.
  * @author Nick Hamnett
  * @version 2019-07-25
  *
  */
-public class User {
+public class User implements Serializable {
 	private int id;
 	
 	private String name;
@@ -78,4 +80,10 @@ public class User {
 		
 		return this.id == other.id && this.name.equals(other.name) && this.email.equals(other.email);
 	}
+	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + "]";
+	}
+
 }

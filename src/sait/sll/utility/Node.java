@@ -1,6 +1,8 @@
 package sait.sll.utility;
 
-public class Node {
+import java.io.Serializable;
+
+public class Node implements Serializable {
 	
 	private Object element;
 	private Node successor;

@@ -2,6 +2,8 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.IOException;
+
 import org.junit.jupiter.api.*;
 
 import sait.sll.utility.*;
@@ -47,9 +49,10 @@ class LinkedListTests {
 	
 	/**
 	 * Tests appending elements to the linked list.
+	 * @throws IOException 
 	 */
 	@Test
-	void testAppendNode() {
+	void testAppendNode() throws IOException {
 		this.linkedList.append("a");
 		this.linkedList.append("b");
 		this.linkedList.append("c");
@@ -117,9 +120,10 @@ class LinkedListTests {
 	
 	/**
 	 * Tests inserting node at valid index.
+	 * @throws IOException 
 	 */
 	@Test
-	void testInsertNode() {
+	void testInsertNode() throws IOException {
 		this.linkedList.append("a");
 		this.linkedList.append("b");
 		this.linkedList.append("c");
@@ -157,9 +161,10 @@ class LinkedListTests {
 	
 	/**
 	 * Tests replacing existing nodes data.
+	 * @throws IOException 
 	 */
 	@Test
-	void testReplaceNode() {
+	void testReplaceNode() throws IOException {
 		this.linkedList.append("a");
 		this.linkedList.append("b");
 		this.linkedList.append("c");
@@ -194,9 +199,10 @@ class LinkedListTests {
 	
 	/**
 	 * Tests deleting node from linked list.
+	 * @throws IOException 
 	 */
 	@Test
-	void testDeleteNode() {
+	void testDeleteNode() throws IOException {
 		this.linkedList.append("a");
 		this.linkedList.append("b");
 		this.linkedList.append("c");
@@ -228,9 +234,10 @@ class LinkedListTests {
 	
 	/**
 	 * Tests finding and retrieving node in linked list.
+	 * @throws IOException 
 	 */
 	@Test
-	void testFindNode() {
+	void testFindNode() throws IOException {
 		this.linkedList.append("a");
 		this.linkedList.append("b");
 		this.linkedList.append("c");
@@ -253,9 +260,10 @@ class LinkedListTests {
 	}
 	/**
 	 * @author Ben
+	 * @throws IOException 
 	 */
 	@Test
-	void testIndexOf(){
+	void testIndexOf() throws IOException{
 		this.linkedList.append("a");
 		this.linkedList.append("b");
 		this.linkedList.append("c");
@@ -268,9 +276,10 @@ class LinkedListTests {
 	}
 	/**
 	 * @author Ben
+	 * @throws IOException 
 	 */
 	@Test
-	void testContains(){
+	void testContains() throws IOException{
 		this.linkedList.append("a");
 		this.linkedList.append("b");
 		this.linkedList.append("c");
@@ -287,7 +296,7 @@ class LinkedListTests {
 	 *@author Liam McLaughlin 
 	 */
 	@Test
-	public void testIndexRemove() {
+	public void testIndexRemove() throws IOException {
 		this.linkedList.append("a");
 		this.linkedList.append("b");
 		this.linkedList.append("c");
@@ -304,7 +313,7 @@ class LinkedListTests {
 	 * @author Liam McLaughlin
 	 */
 	@Test
-	public void testOutOfBoundsRemoval() {
+	public void testOutOfBoundsRemoval() throws IOException {
 		this.linkedList.append("a");
 		this.linkedList.append("b");
 		try {
