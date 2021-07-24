@@ -176,6 +176,7 @@ public class SLL implements LinkedListADT, Serializable {
 	 * This function will delete a node at the specified index.
 	 * @throws IndexOutOfBoundsException
 	 * @param index the index to remove the node at
+	 * @author Liam McLaughlin
 	 */
 	@Override
 	public void delete(int index) throws IndexOutOfBoundsException {

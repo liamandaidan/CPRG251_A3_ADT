@@ -15,7 +15,7 @@ public class User implements Serializable {
 	
 	private String email;
 	
-	private String password;
+	private transient String password;
 	
 	/**
 	 * Initializes a User object.
