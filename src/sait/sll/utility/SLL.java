@@ -29,6 +29,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * Constructor, creates a SLL with 3 params.
 	 * @param head
 	 * @param tail
 	 * @param size
@@ -41,6 +42,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * Will return if a SLL is empty.
 	 * @return true/false if list is empty
 	 */
 	@Override
@@ -59,6 +61,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * Create a new SLL at the end of the current queue.
 	 * @param Object the object to be appended to the list
 	 * @throws IOException if the FileOutputStream can't find the file specified
 	 */
@@ -97,6 +100,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * Will add a new node at the start of the SLL.
 	 * @param Object the object to be added to the start of the list
 	 */
 	@Override
@@ -109,6 +113,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * Will insert a Node into a position specified by the method call.
 	 * @param Object the object to be appended to the list
 	 * @param index the position in the list for the object to be added
 	 * @throws IndexOutOfBoundsException if the index falls outside the bounds of the list size
@@ -141,6 +146,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * Will replace a node at index with another.
 	 * @param Object the new object
 	 * @param index the position of the existing object to be replaced
 	 * @throws IndexOutOfBoundsException if the index falls outside the bounds of the list size
@@ -165,6 +171,7 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * This function will return the size of the SLL
+	 * @author Liam McLaughlin
 	 * @return the size of the linked list
 	 */
 	@Override
@@ -234,6 +241,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * This method will search a SLL and return the index of a match.
 	 * @author Ben
 	 * @param the data of the object to be located
 	 * @return the index of the found object, or -1 if the object isn't found
@@ -254,6 +262,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * This method will return a T/F if a SLL contains an object.
 	 * @author Ben
 	 * @param the data of the object to be located
 	 * @return true/false if the object is located in the list
@@ -283,6 +292,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * Return the head of a SLL.
 	 * @return the head
 	 */
 	public Node getHead() {
@@ -290,6 +300,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * Set a reference to a new head of a SLL.
 	 * @param head the head to set
 	 */
 	public void setHead(Node head) {
@@ -297,6 +308,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * Get the tail of a SLL.
 	 * @return the tail
 	 */
 	public Node getTail() {
@@ -304,6 +316,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * Set the tail reference of a SLL.
 	 * @param tail the tail to set
 	 */
 	public void setTail(Node tail) {
@@ -311,6 +324,7 @@ public class SLL implements LinkedListADT, Serializable {
 	}
 
 	/**
+	 * Sets the size of the SLL.
 	 * @param size the size to set
 	 */
 	public void setSize(int size) {
