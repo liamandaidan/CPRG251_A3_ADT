@@ -199,7 +199,7 @@ class LinkedListTests {
 	
 	/**
 	 * Tests deleting node from linked list.
-	 * @throws IOException 
+	 * @throws IOException An exception if there is an I/O issue. 
 	 */
 	@Test
 	void testDeleteNode() throws IOException {
@@ -234,7 +234,7 @@ class LinkedListTests {
 	
 	/**
 	 * Tests finding and retrieving node in linked list.
-	 * @throws IOException 
+	 * @throws IOException An exception if there is an I/O issue.
 	 */
 	@Test
 	void testFindNode() throws IOException {
@@ -260,7 +260,7 @@ class LinkedListTests {
 	}
 	/**
 	 * @author Ben
-	 * @throws IOException 
+	 * @throws IOException An exception if there is an I/O issue.
 	 * tests finding the index of an element by its contents
 	 */
 	@Test
@@ -277,7 +277,7 @@ class LinkedListTests {
 	}
 	/**
 	 * @author Ben
-	 * @throws IOException 
+	 * @throws IOException An exception if there is an I/O issue.
 	 * tests contains method
 	 */
 	@Test
@@ -293,9 +293,10 @@ class LinkedListTests {
 	}
 	
 	
-	/*
+	/**
 	 * This method will test the removal and the correct index position afterward
 	 *@author Liam McLaughlin 
+	 * @Throws IOException An exception if there is an I/O issue.
 	 */
 	@Test
 	public void testIndexRemove() throws IOException {
@@ -310,9 +311,10 @@ class LinkedListTests {
 		
 		
 	}
-	/*
+	/** 
 	 * This method will test removal of an index outside of bounds.
 	 * @author Liam McLaughlin
+	 * @throws IOException An exception if there is an I/O issue.
 	 */
 	@Test
 	public void testOutOfBoundsRemoval() throws IOException {
@@ -328,6 +330,7 @@ class LinkedListTests {
 	
 	/**
 	 * This will test to make sure the retrieve Method is return he correct value
+	 * @throws IOException An exception if there is an I/O issue.
 	 */
 	@Test
 	public void testRetrieve() throws IOException{
@@ -350,6 +353,4 @@ class LinkedListTests {
 		assertThrows(IndexOutOfBoundsException.class, () -> this.linkedList.retrieve(-1), "Out of bounds");
 		
 	}
-	
-	
 }

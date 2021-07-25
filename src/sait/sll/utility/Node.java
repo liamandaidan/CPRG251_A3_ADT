@@ -15,7 +15,8 @@ public class Node implements Serializable {
 	}
 
 	/**
-	 * @param element
+	 *  Constructor with params.
+	 * @param element Element to be stored in the Node.
 	 */
 	public Node(Object element) {
 		super();

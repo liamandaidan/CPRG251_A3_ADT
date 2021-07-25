@@ -58,7 +58,7 @@ public class User implements Serializable {
 	/**
 	 * Checks if the passed password is correct.
 	 * @param password Password to check.
-	 * @return True if password is correct.
+	 * @return The result of if the password check.
 	 */
 	public boolean isCorrectPassword(String password) {
 		if (this.password == null && password == null)
@@ -71,6 +71,8 @@ public class User implements Serializable {
 	
 	/**
 	 * Checks if object is equal to another object.
+	 * @param obj Checks if the objects are Equal.
+	 * @return If the obj is equal or not. 
 	 */
 	public boolean equals(Object obj) {
 		if (!(obj instanceof User))
