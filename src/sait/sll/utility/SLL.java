@@ -30,9 +30,9 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * Constructor, creates a SLL with 3 params.
-	 * @param head
-	 * @param tail
-	 * @param size
+	 * @param head The head of the SLL.
+	 * @param tail The tail of the SLL.
+	 * @param size The size of the SLL.
 	 */
 	public SLL(Node head, Node tail, int size) {
 		super();
@@ -208,7 +208,8 @@ public class SLL implements LinkedListADT, Serializable {
 	 * This function will retrieve a node at the specified index.
 	 * @throws IndexOutOfBoundsException
 	 * @param index the index to remove the node at
-	 * @return whatever is at the specified index
+	 * @return The item that is at the specified index
+	 * @author mikep
 	 */
 	@Override
 	public Object retrieve(int index) throws IndexOutOfBoundsException {
@@ -293,7 +294,7 @@ public class SLL implements LinkedListADT, Serializable {
 
 	/**
 	 * Return the head of a SLL.
-	 * @return the head
+	 * @return the head of the SLL.
 	 */
 	public Node getHead() {
 		return head;
