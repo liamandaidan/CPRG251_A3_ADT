@@ -1,0 +1,33 @@
+CPRG251 - Assignment 3 
+July 27, 2021
+Group 2 - Liam Mclaughlin, Mike Cann, Benson Davis, and Robyn Balanag
+
+This program creates a linked list of users and functions are created to modify 
+the linked list and is then serialized and stored as a binary file. A series of 
+tests are performed to ensure the functionalities are working correctly. 
+
+The SLL class implements the LinkedListADT interface and
+handles any exceptions presented in the code. There is also Node class class that
+represents a node in the linked list. 
+
+The SLL class contains the following functions to modify a linked list: 
+	1. prepend an item to the linked list
+	2. append an item  to the linked list 
+	3. insert an item to the linked list 
+	4. replace an item in the linked list 
+	5. retrieve an item at a specific index
+	6. get the index of a specific item
+	7. check if the linked list has a specific item
+	8. clear the linked list 
+	9. get the number of items in the linked list 
+	10. remove an item from the linked list 
+	
+
+How to run the tests: 
+
+In the test folder > tests
+	- to test the linked list functionalities select the LinkedListADT.java file > 'Run as JUnit Test'
+	- to test the serialization tests functionalities select the Serialization.java file > 'Run as JUnit Test'
+
+
+
