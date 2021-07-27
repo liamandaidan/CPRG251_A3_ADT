@@ -82,10 +82,8 @@ public class SLL implements LinkedListADT, Serializable {
 
 			FileOutputStream fos = new FileOutputStream("res/test.dat");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			System.out.println("file created");
 			
 			oos.writeObject(currentNode.getElement()); 
-			System.out.println("list item written");
 			
 			oos.reset();
 
@@ -232,7 +230,6 @@ public class SLL implements LinkedListADT, Serializable {
 		
 		for (int i = 0; i < this.size(); i++) {
 			if(i == index) {
-				//System.out.println("the index and iterator match");
 				return current.getElement();
 			}
 			
@@ -284,7 +281,6 @@ public class SLL implements LinkedListADT, Serializable {
 		//System.out.println();
 		while (current != null) {
 			if (current.getElement().equals(data)) {
-				System.out.println("Made it here! "+ current.getElement());
 				return true;
 			} else {
 				current = current.getNext();

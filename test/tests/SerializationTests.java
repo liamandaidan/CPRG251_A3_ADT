@@ -97,8 +97,6 @@ class SerializationTests {
 
 		assertEquals(expectedUser1, actualUser1); 
 		
-		System.out.println(expectedUser1);
-		System.out.println(actualUser1);
 		assertTrue(actualUser1.isCorrectPassword(null));
 
 		User expectedUser2 = new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", null);
