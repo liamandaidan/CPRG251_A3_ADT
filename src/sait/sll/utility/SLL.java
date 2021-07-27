@@ -64,6 +64,7 @@ public class SLL implements LinkedListADT, Serializable {
 	 * Create a new SLL at the end of the current queue.
 	 * @param Object the object to be appended to the list
 	 * @throws IOException if the FileOutputStream can't find the file specified
+	 * @author Robyn
 	 */
 	@Override
 	public void append(Object data) throws IOException {
@@ -117,6 +118,7 @@ public class SLL implements LinkedListADT, Serializable {
 	 * @param Object the object to be appended to the list
 	 * @param index the position in the list for the object to be added
 	 * @throws IndexOutOfBoundsException if the index falls outside the bounds of the list size
+	 * @author Robyn
 	 */
 	@Override
 	public void insert(Object data, int index) throws IndexOutOfBoundsException {
